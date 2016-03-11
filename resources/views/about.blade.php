@@ -1,26 +1,26 @@
-<!DOCTYPE html>
-<html>
-    @extends('header')  
-    <body>
-    	<div class="container">
-    	<br><br><br>
+    	@extends('master')
+
+@section('about')
+<div class="container">
+    	<br><br><br><br>
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li class="active">Acerca de</li>
 		</ol>
-
 		<div class="row">
-			
+			<div class="container text-center">
 			<!-- Article main content -->
 			<article class="col-sm-8 maincontent">
 				<header class="page-header">
 					<h1 class="page-title">Acerca de ITCuliacan</h1>
 				</header>
 				<p><img src="assets/images/donatiempo1.png" alt="" class="img-rounded pull-right" width="300" > 
-					<p style="text-align: justify">
 					<h3>Misión</h3>
+					<p style="text-align: justify">
 					Formar profesionistas de excelencia, que contribuyan al desarrollo de la comunidad a través de la creación y aplicación de tecnologías, con ética de trabajo, creatividad y respeto a la naturaleza.
+					</p>
 					<h3>Visión</h3>
+					<p style="text-align: justify">
 					Ser un instituto tecnológico consolidado en su organización, infraestructura física,en sus funciones de docencia, investigación y extensionismo, con una oferta educativa de pertinencia, calidad y equidad, con programas académicos certificados, con currículas flexibles que den respuesta a la sociedad de cara al siglo XXI, con un modelo educativo innovador, para que sus egresados representen una ventaja competitiva a nivel nacional e internacional.
 					</p>  
 					<h3>Valores</h3>
@@ -52,12 +52,7 @@
 
 			</aside>
 			<!-- /Sidebar -->
-
+			</div>
 		</div>
-  
-      @extends('footer')
-      @extends('libreriasjs')
-      </div>
-
-    </body>
-</html>
+  </div>
+    @stop

@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html>
-    @extends('header')  
-    <body>
-	<!-- container -->
+	@extends('master')
+	@section('contacto')
 	<div class="container">
     	<br><br><br>
 		<ol class="breadcrumb">
@@ -71,11 +68,9 @@
 </div>
 		<section class="container-full top-space">
 		<div id="map">
-			
-	</div>
-	</section>
-
-		@extends('footer')
-		@extends('libreriasjs')	
-</body>
-</html>
+		</div>
+		</section>
+		<script src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false&amp;extension=.js"></script> 
+		<script src="/js/google-map.js"></script>
+@stop
+		

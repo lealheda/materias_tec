@@ -5,6 +5,3 @@
 	<script src="/js/jQuery.headroom.min.js"></script>
 	<script src="/js/template.js"></script>
 	
-	<!-- Google Maps -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=&amp;sensor=false&amp;extension=.js"></script> 
-	<script src="/js/google-map.js"></script>

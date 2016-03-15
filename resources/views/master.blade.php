@@ -36,7 +36,7 @@
               </ul>
             </li>
               <li><a class="btn" href="/"> Salir </a></li>
-              <li><a class="btn" href="/"> Inicia sesión / Registro </a></li>
+              <li><a class="btn" href="/login"> Inicia sesión / Registro </a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -63,7 +63,7 @@
               </ul>
             </li>
               <li><a class="btn" href="/"> Salir </a></li>
-              <li><a class="btn" href="/"> Inicia sesión / Registro </a></li>
+              <li><a class="btn" href="/login"> Inicia sesión / Registro </a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -72,6 +72,8 @@
     @yield('home')
     @yield('about')
     @yield('contacto')
+    @yield('login')
+    @yield('registro')
     
     <footer id="footer" class="top-space">
     <div class="footer1">
@@ -125,10 +127,10 @@
           <div class="col-md-6 widget">
             <div class="widget-body">
               <p class="simplenav">
-                <a href="#">Inicio</a> | 
-                <a href="#">Acerca de</a> |
-                <a href="#">Contacto</a> |
-                <b><a href="#">Registrate</a></b>
+                <a href="/">Inicio</a> | 
+                <a href="/about">Acerca de</a> |
+                <a href="/contacto">Contacto</a> |
+                <b><a href="/registro">Registrate</a></b>
               </p>
             </div>
           </div>

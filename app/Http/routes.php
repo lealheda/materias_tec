@@ -12,25 +12,28 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('template.home');
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('template.about');
 });
 
 Route::get('/contacto', function () {
-    return view('contacto');
+    return view('template.contacto');
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('template.login');
 });
 
 Route::get('/registro', function () {
-    return view('registro');
+    return view('template.registro');
 });
 
+Route::group([], function(){
+    Route::resource('carreras','CarrerasController');
+});
 
 /*
 |--------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    @extends('header')  
+    @extends('template.header')  
     <body>
       <div class="container">
       <div class="container text-center">

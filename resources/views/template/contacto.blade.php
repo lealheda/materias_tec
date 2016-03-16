@@ -1,4 +1,4 @@
-	@extends('master')
+	@extends('template.master')
 	@section('contacto')
 	<div class="container">
     	<br><br><br>

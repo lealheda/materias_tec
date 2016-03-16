@@ -1,4 +1,4 @@
-	@extends('master')
+	@extends('template.master')
 	@section('home')
     <div class="container text-center">
     <br><br><br> 

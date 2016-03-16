@@ -1,5 +1,5 @@
 	<!-- Fixed navbar -->
-	@extends('head')
+	@extends('template.head')
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
 			<div class="navbar-header">

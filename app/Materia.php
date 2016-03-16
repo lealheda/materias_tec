@@ -3,12 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Materia extends Model
+class Materia extends Model implements SluggableInterface
 {
+	use SluggableTrait;
+
+    protected $sluggable = ["
+       'build_from' => 'nombre',
+        'save_to'    => 'slug',
+    "];
+
 	protected $table = "materias";
 
-    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre','activo','user_id'];
 
     
     public function carrera(){

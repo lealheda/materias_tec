@@ -1,4 +1,4 @@
-	@extends('master')
+	@extends('template.master')
 	@section('registro')
 	<!-- container -->
 	<div class="container">

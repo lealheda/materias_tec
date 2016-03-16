@@ -3,12 +3,21 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Unidad extends Model
+class Unidad extends Model implements SluggableInterface
 {
+	use SluggableTrait;
+
+    protected $sluggable = ["
+       'build_from' => 'nombre',
+        'save_to'    => 'slug',
+    "];
+
 	protected $table = "unidades";
 
-    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre','activo'];
 
     public function materia(){
 		return $this->belongsTo('App\Materia');

@@ -74,6 +74,7 @@
     @yield('contacto')
     @yield('login')
     @yield('registro')
+    @yield('content')
     
     <footer id="footer" class="top-space">
     <div class="footer1">

@@ -2,7 +2,6 @@
 
 @section('about')
 <div class="container">
-    	<br><br><br><br>
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li class="active">Acerca de</li>

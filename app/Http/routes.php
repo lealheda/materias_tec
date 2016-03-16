@@ -33,6 +33,10 @@ Route::get('/registro', function () {
 
 Route::group([], function(){
     Route::resource('carreras','CarrerasController');
+    Route::get('carreras/{id}/destroy',[
+    	'uses' => 'CarrerasController@destroy',
+    	'as' => 'carreras.destroy'
+    	]);
 });
 
 /*

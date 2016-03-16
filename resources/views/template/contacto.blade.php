@@ -1,7 +1,6 @@
 	@extends('template.master')
 	@section('contacto')
 	<div class="container">
-    	<br><br><br>
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li class="active">Contacto</li>

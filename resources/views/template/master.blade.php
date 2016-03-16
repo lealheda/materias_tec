@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head> 
+    <title>@yield('title','Default') | ITCULIACAN</title>
     <meta charset="utf-8">
           <meta name="viewport"    content="width=device-width, initial-scale=1.0">
           <meta name="description" content="">
@@ -30,7 +31,7 @@
              <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li class="active"><a href="/">Carreras</a></li>
+                <li class="active"><a href="{{ route('carreras.index') }}">Carreras</a></li>
                 <li class="active"><a href="/">Materias</a></li>
                 <li class="active"><a href="/">Unidades</a></li>
               </ul>
@@ -57,7 +58,7 @@
              <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                  <li class="active"><a href="/">Carreras</a></li>
+                  <li class="active"><a href="{{ route('carreras.index') }}">Carreras</a></li>
                     <li class="active"><a href="/">Materias</a></li>
                 <li class="active"><a href="/">Unidades</a></li>
               </ul>
@@ -69,10 +70,13 @@
     </div>
   </div>
   <!-- /.navbar -->
+   <br><br><br><br>
+    @include('flash::message')
     @yield('home')
     @yield('about')
     @yield('contacto')
     @yield('login')
+    @include('flash::message')
     @yield('registro')
     @yield('content')
     

@@ -2,7 +2,6 @@
 	@section('login')
 	<!-- container -->
 	<div class="container">
-
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li class="active">Acesso a usuario</li>

@@ -32,8 +32,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="active"><a href="{{ route('carreras.index') }}">Carreras</a></li>
-                <li class="active"><a href="/">Materias</a></li>
-                <li class="active"><a href="/">Unidades</a></li>
+                <li class="active"><a href="{{ route('materias.index') }}">Materias</a></li>
+                <li class="active"><a href="{{ route('unidades.index') }}">Unidades</a></li>
               </ul>
             </li>
               <li><a class="btn" href="/"> Salir </a></li>
@@ -59,8 +59,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu<b class="caret"></b></a>
               <ul class="dropdown-menu">
                   <li class="active"><a href="{{ route('carreras.index') }}">Carreras</a></li>
-                    <li class="active"><a href="/">Materias</a></li>
-                <li class="active"><a href="/">Unidades</a></li>
+                    <li class="active"><a href="{{ route('materias.index') }}">Materias</a></li>
+                <li class="active"><a href="{{ route('unidades.index') }}">Unidades</a></li>
               </ul>
             </li>
               <li><a class="btn" href="/"> Salir </a></li>

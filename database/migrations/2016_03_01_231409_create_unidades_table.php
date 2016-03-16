@@ -16,6 +16,8 @@ class CreateUnidadesTable extends Migration
             $table->increments('id');
             $table->String('nombre');
             $table->boolean('activo');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

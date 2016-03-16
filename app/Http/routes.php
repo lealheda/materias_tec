@@ -39,6 +39,24 @@ Route::group([], function(){
     	]);
 });
 
+Route::group([], function(){
+    Route::resource('materias','MateriasController');
+    Route::get('materias/{id}/destroy',[
+        'uses' => 'MateriasController@destroy',
+        'as' => 'materias.destroy'
+        ]);
+});
+
+Route::group([], function(){
+    Route::resource('unidades','UnidadesController');
+    Route::get('unidades/{id}/destroy',[
+        'uses' => 'UnidadesController@destroy',
+        'as' => 'unidades.destroy'
+        ]);
+});
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

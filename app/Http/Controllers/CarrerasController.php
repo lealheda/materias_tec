@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Carrera;
+use App\Carrera_materia;
+use App\Materia;
 use Laracasts\Flash\Flash;
 
 class CarrerasController extends Controller
@@ -48,6 +50,16 @@ class CarrerasController extends Controller
     	$carrera->delete();
     	Flash::warning('La carrera ' .$carrera->nombre . ' a sido eliminado de forma exitosa');
     	return redirect()->route('carreras.index');
+    }
+
+    public function relacion($id){
+        $carrera = Carrera::find($id);
+        $carrera_materia = Carrera_materia::where('carrera_id',$id)->get(['carrera_id', 'materia_id']);
+        //dd($carrera_materia);
+        $materia = Materia::all();
+        //dd($materia);
+        //$materia = Materia::find()->where('id', $carrera_materia->materia_id)->get(['nombre']);
+        return view('carrera.relacion')->with('carrera_materia',$carrera_materia)->with('materia',$materia);
     }
 
 }

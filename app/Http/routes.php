@@ -37,6 +37,10 @@ Route::group([], function(){
     	'uses' => 'CarrerasController@destroy',
     	'as' => 'carreras.destroy'
     	]);
+    Route::get('carreras/{id}/relacion',[
+        'uses' => 'CarrerasController@relacion',
+        'as' => 'carreras.relacion'
+        ]);
 });
 
 Route::group([], function(){
@@ -45,6 +49,10 @@ Route::group([], function(){
         'uses' => 'MateriasController@destroy',
         'as' => 'materias.destroy'
         ]);
+    Route::get('materias/{id}/relacion',[
+        'uses' => 'MateriasController@relacion',
+        'as' => 'materias.relacion'
+    ]);
 });
 
 Route::group([], function(){
@@ -55,7 +63,8 @@ Route::group([], function(){
         ]);
 });
 
-
+    
+Route::get('pdf', 'PdfController@invoice');
 
 /*
 |--------------------------------------------------------------------------

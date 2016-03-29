@@ -16,6 +16,8 @@ class CarrerasMaterias extends Migration
             $table->increments('id');
             $table->integer('carrera_id')->unsigned();
             $table->integer('materia_id')->unsigned();
+            $table->foreign('carrera_id')->references('id')->on('carreras')->onDelete('cascade');
+            $table->foreign('materia_id')->references('id')->on('materias')->onDelete('cascade');
             $table->timestamps();
         });
     }

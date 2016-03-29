@@ -1,8 +1,12 @@
 	@extends('template.master')
 	@section('title','Lista de unidades')
 	@section('content')
+	<div class="container">
 	<br>
 	@include('flash::message')
+	  	<ol class="breadcrumb">
+			<li class="active">Unidades</li>
+		</ol>
 	<a href="{{ route('unidades.create') }}" class="btn btn-info">Registrar nueva unidad</a><hr>
 		<table class="table table-striped">
 			<thead>
@@ -24,5 +28,5 @@
 			</tbody>
 		</table>
 		{!! $unidades->render() !!}
-
+</div>
 	@endsection

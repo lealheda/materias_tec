@@ -16,6 +16,8 @@ class MateriasUnidades extends Migration
             $table->increments('id');
             $table->integer('materia_id')->unsigned();
             $table->integer('unidad_id')->unsigned();
+            $table->foreign('materia_id')->references('id')->on('materias')->onDelete('cascade');
+            $table->foreign('unidad_id')->references('id')->on('unidades')->onDelete('cascade');
             $table->timestamps();
         });
     }

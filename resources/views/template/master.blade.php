@@ -14,6 +14,7 @@
           <link href="{{ asset('/css/bootstrap-theme.css') }}" rel="stylesheet" type="text/css">
           <link href="{{ asset('/css/main.css') }}" rel="stylesheet" type="text/css">
           <link href="{{ asset('/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+          <link href="{{ asset('/css/relaciones.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
       <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -159,5 +160,9 @@
   <script src="/js/headroom.min.js"></script>
   <script src="/js/jQuery.headroom.min.js"></script>
   <script src="/js/template.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="/js/relaciones.js"></script>
   </body>
 </html>

@@ -34,11 +34,11 @@
               <ul class="dropdown-menu">
                 <li class="active"><a href="{{ route('carreras.index') }}">Carreras</a></li>
                 <li class="active"><a href="{{ route('materias.index') }}">Materias</a></li>
-                <li class="active"><a href="{{ route('unidades.index') }}">Unidades</a></li>
               </ul>
             </li>
-              <li><a class="btn" href="/"> Salir </a></li>
+              <!-- <li><a class="btn" href="/"> Salir </a></li>
               <li><a class="btn" href="/login"> Inicia sesión / Registro </a></li>
+              -->
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -61,11 +61,11 @@
               <ul class="dropdown-menu">
                   <li class="active"><a href="{{ route('carreras.index') }}">Carreras</a></li>
                     <li class="active"><a href="{{ route('materias.index') }}">Materias</a></li>
-                <li class="active"><a href="{{ route('unidades.index') }}">Unidades</a></li>
               </ul>
             </li>
-              <li><a class="btn" href="/"> Salir </a></li>
+              <!-- <li><a class="btn" href="/"> Salir </a></li>
               <li><a class="btn" href="/login"> Inicia sesión / Registro </a></li>
+              -->
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -77,7 +77,6 @@
     @yield('about')
     @yield('contacto')
     @yield('login')
-    @include('flash::message')
     @yield('registro')
     @yield('content')
     
@@ -164,5 +163,6 @@
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="/js/relaciones.js"></script>
+  <script src="/js/addfield_materias.js"></script>
   </body>
 </html>

@@ -8,24 +8,21 @@
 		</ol>
     	<h4>Materias disponibles - Materias del curso</h4>
     		<ul id="sortable1" class="connectedSortable">
-	   		<?php 
-				foreach ($carrera_materia as $cm) {
-					?>
-				    <li class='ui-state-default'><?php echo "$cm->materia_id";?>
+				    @foreach($materia_disponibles as $md)
+				    <li class='ui-state-default'>
+				    <input type="hidden" value="{{ $md->id }}">
+				    {{ $md->nombre }}
 				    </li>
-				    <?php 
-				}
-			?>
+				    @endforeach
 			</ul>
 			<ul id="sortable2" class="connectedSortable">
-			<?php 
-				foreach ($materia as $m) {
-					?>
-				    <li class='ui-state-highlight'><?php echo "$m->nombre";?>
+				 @foreach ($carrera_materia as $cm)
+				    <li class='ui-state-highlight'>
+				    <input type="hidden" value="{{ $cm->id }}">
+				    {{ $cm->nombre }} 
 				    </li>
-				    <?php 
-				}
-			?>
+				@endforeach
 			</ul>
+			<a href="#" onclick="actualizar_relacion()" class="btn btn-info">Guardar</a>
     	</div>
 	@endsection

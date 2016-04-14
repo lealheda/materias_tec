@@ -1,9 +1,11 @@
 	@extends('template.master')
 	@section('title','Nueva carrera')
 	@section('content')
+
     <div class="container">
     <hr>
-    <p class="">Registro</p>
+    <p class="">Registro de carrera</p>
+
     {!! Form::open(['route' => 'carreras.store', 'method'=> 'POST']) !!}
 		<div class="form-group">
 			{!! Form::label('nombre','Nombre') !!}

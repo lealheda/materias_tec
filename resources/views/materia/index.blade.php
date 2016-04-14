@@ -22,7 +22,7 @@
 					<td>
 					<a href="{{ route('materias.edit', $materia->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
 					<a href="{{ route('materias.destroy',$materia->id) }}" onclick="return confirm('Seguro que deseas eliminarlo')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
-					<a href="{{ route('materias.relacion', $materia->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-resize-small" aria-hidden="true" title="Relacionar unidades"></span></a>
+					<a href="{{ route('materias.relacion', $materia->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-resize-small" aria-hidden="true" title="ver unidades"></span></a>
 					</td>
 				</tr>
 				@endforeach

@@ -17,7 +17,7 @@ class Unidad extends Model implements SluggableInterface
 
 	protected $table = "unidades";
 
-    protected $fillable = ['nombre','activo','user_id'];
+    protected $fillable = ['nombre','descripcion','activo','user_id','materia_id'];
 
     public function materia(){
 		return $this->belongsTo('App\Materia');

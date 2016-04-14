@@ -31,6 +31,12 @@ Route::get('/registro', function () {
     return view('template.registro');
 });
 
+Route::get('/carreras/pdf', 'CarrerasController@pdf');
+
+Route::post('/carreras/hola', 'CarrerasController@hola');
+
+Route::get('/carreras/actrelacion', 'CarrerasController@actrelacion');
+        
 Route::group([], function(){
     Route::resource('carreras','CarrerasController');
     Route::get('carreras/{id}/destroy',[
@@ -41,6 +47,11 @@ Route::group([], function(){
         'uses' => 'CarrerasController@relacion',
         'as' => 'carreras.relacion'
         ]);
+    /*Route::get('carreras/actrelacion',[
+        'uses' => 'CarrerasController@actrelacion',
+        'as' => 'carreras.actrelacion'
+        ]);
+      */  
 });
 
 Route::group([], function(){

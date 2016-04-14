@@ -10,7 +10,7 @@ class PdfController extends Controller
     public function invoice() 
     {
     	$carreras=Carrera::all();
-        $view = \View::make('pdf.pdf', compact('carreras'))->render();
+        $view = \View::make('carrera.pdf', compact('carreras'))->render();
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->stream('carreras');

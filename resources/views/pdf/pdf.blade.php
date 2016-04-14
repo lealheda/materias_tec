@@ -3,6 +3,8 @@
     <title>Pdf</title>
   </head>
   <body>
+    <img src="images/Logo.jpg">
+  <div class="tabla">
     <table border="0" cellspacing="0" cellpadding="0">
       <thead>
         <tr>
@@ -19,6 +21,8 @@
           <td class="unit">{{ $carrera->descripcion }}</td>
         </tr>
     @endforeach
+    </tbody>
+    </div>
   </body>
 </html>
 

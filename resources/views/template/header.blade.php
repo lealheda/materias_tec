@@ -20,8 +20,9 @@
 								<li class="active"><a href="/">Unidades</a></li>
 							</ul>
 						</li>
-							<li><a class="btn" href="/"> Salir </a></li>
+							<!-- <li><a class="btn" href="/"> Salir </a></li>
 							<li><a class="btn" href="/"> Inicia sesión / Registro </a></li>
+							-->
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -47,8 +48,9 @@
 								<li class="active"><a href="/">Unidades</a></li>
 							</ul>
 						</li>
-							<li><a class="btn" href="/"> Salir </a></li>
+							<!--<li><a class="btn" href="/"> Salir </a></li>
 							<li><a class="btn" href="/"> Inicia sesión / Registro </a></li>
+							-->
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>

@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Unidad;
+use App\Materia;
 use Laracasts\Flash\Flash;
+use DB;
 
 class UnidadesController extends Controller
 {
     public function create(){
-    	return view('unidad.registro');
+        
+    }
+
+    public function nueva($id){
+        $materia_id = $id;
+        return view('unidad.registro')->with('materia_id',$materia_id);
     }
 
 	public function index(){
@@ -18,14 +25,15 @@ class UnidadesController extends Controller
     }    
 
     public function store(Request $request){
+        $materia_id = $request->materia_id;
     	$unidad = new unidad($request->all());
     	$unidad -> activo = 1;
     	$unidad -> user_id = 1;
     	$unidad -> save();
-    	Flash::overlay('unidad ' . $unidad->nombre .' registrada con exito');
     	Flash::success('unidad ' . $unidad->nombre .' registrada con exito');
-    	return redirect()->route('unidades.index');
-    	//return redirect()->action('unidadsController@index');
+    	$materia = Materia::find($materia_id);
+        $unidades = DB::table('unidades')->where('materia_id',"=",$materia_id)->get();
+        return view('materia.unidades')->with('materia',$materia)->with('unidades',$unidades);
     }
 
     public function edit($id){
@@ -44,9 +52,12 @@ class UnidadesController extends Controller
 
     public function destroy($id){
     	$unidad = unidad::find($id);
+        $materia_id = $unidad->materia_id;
     	$unidad->delete();
     	Flash::warning('La unidad ' .$unidad->nombre . ' a sido eliminado de forma exitosa');
-    	return redirect()->route('unidades.index');
+    	$materia = Materia::find($materia_id);
+        $unidades = DB::table('unidades')->where('materia_id',"=",$materia->id)->get();
+        return view('materia.unidades')->with('materia',$materia)->with('unidades',$unidades);
     }
 
 }

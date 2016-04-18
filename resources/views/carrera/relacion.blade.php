@@ -4,7 +4,7 @@
 		<div class="container">
     	<hr>
     	<ol class="breadcrumb">
-			<li class="active">Relación de materias</li>
+			<li class="active">Relación de materias de la carrera {{ $carrera->nombre }}</li>
 		</ol>
     	<h4>Materias disponibles - Materias del curso</h4>
     		<ul id="sortable1" class="connectedSortable">
@@ -23,6 +23,6 @@
 				    </li>
 				@endforeach
 			</ul>
-			<a href="#" onclick="actualizar_relacion()" class="btn btn-info">Guardar</a>
+			<a href="#" onclick="actualizar_relacion({{$carrera->id}})" class="btn btn-info">Guardar</a>
     	</div>
 	@endsection

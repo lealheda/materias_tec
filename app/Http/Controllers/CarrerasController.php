@@ -75,7 +75,7 @@ class CarrerasController extends Controller
             }
         }
         //dd($mat_disponibles);
-        return view('carrera.relacion')->with('carrera_materia',$carrera_materia)->with('materia_disponibles',$mat_disponibles);
+        return view('carrera.relacion')->with('carrera',$carrera)->with('carrera_materia',$carrera_materia)->with('materia_disponibles',$mat_disponibles);
     }
 
     public function pdf(){
@@ -83,18 +83,23 @@ class CarrerasController extends Controller
         return view('carrera.pdf2')->with('carreras',$carreras);
     }
 
-    public function actrelacion(){
-        echo "FAIL";
-    }
-
-    public function hola(Request $request)
-    {
-        if ($request->isMethod('post')){    
+    public function actrelacion(Request $request){
+         if ($request->isMethod('post')){    
             $todosValores = $request->all();
-            $ids = $todosValores['ids'];
-            $idsArray = json_decode($ids, true);
-            echo $idsArray[1]['idCarrera'];
-            return response()->json(['response' => $ids]); 
+            //dd($todosValores);
+            $id_carrera = $todosValores['carrera_id'];
+            Carrera_materia::where('carrera_id','=',$id_carrera)->delete();
+            $ids_materias = $todosValores['relacion'];
+            $idsArray = json_decode($ids_materias, true);
+            //dd($idsArray[0]['materia_id']);
+            foreach ($idsArray as $key ) {
+                $carrera_materia = new Carrera_materia;
+                $carrera_materia-> materia_id = $key['materia_id'];
+                $carrera_materia-> carrera_id = $id_carrera;
+                $carrera_materia->save();
+            }
+            //return $this->index();
+            return response()->json(['response' => $idsArray]); 
         }
     }
 

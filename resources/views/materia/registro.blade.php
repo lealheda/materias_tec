@@ -10,10 +10,7 @@
 			{!! Form::text('nombre', null, ['class' => 'form-control', 'required', 'placeholder' => 'Nombre de la materia']) !!}
 		</div>
 		<div id="unidades">
-		<label for="unidad">Unidad</label>
-		<input class="form-control" required="required" placeholder="Nombre de la unidad" name="unidad" type="text" id="unidad">
-		<label for="descripcion">Descripcion</label>
-		<input class="form-control" required="required" placeholder="Descripcion de la unidad" name="descripcion" type="text" id="descripcion">
+		
 		</div>
 		<div class="form-group">
 		<br>

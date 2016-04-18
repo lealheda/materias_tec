@@ -22,17 +22,27 @@ class MateriasController extends Controller
 
     public function store(Request $request){
     	$materia = new materia($request->all());
-        $unidad = new unidad($request->all());
     	$materia -> activo = 1;
     	$materia -> user_id = 1;
-        //dd($unidad);
-        $input = Input::all();
-        dd($input);
-    	$materia -> save();
+        $materia -> save();
+        $id_materia = $materia->id;
+        $todosValores = $request->all();
+        $unidad = $todosValores['unidad'];
+        $descripcion = $todosValores['descripcion'];
+        $tmp = 0;
+        foreach ($unidad as $uni) {
+            $nunidad = new unidad();
+            $nunidad->nombre=$uni;
+            $nunidad->descripcion=$descripcion[$tmp];
+            $nunidad->activo=1;
+            $nunidad->user_id=1;
+            $nunidad->materia_id=$id_materia;
+            $nunidad->save();
+            $tmp++;
+        }
     	Flash::overlay('materia ' . $materia->nombre .' registrada con exito');
     	Flash::success('materia ' . $materia->nombre .' registrada con exito');
     	return redirect()->route('materias.index');
-    	//return redirect()->action('materiasController@index');
     }
 
     public function edit($id){
@@ -58,26 +68,8 @@ class MateriasController extends Controller
 
     public function relacion($id){
         $materia = Materia::find($id);
-        
-        $materia_unidad = DB::table('materias_unidades')->
-        where('materia_id',"=",$id)->join('unidades','unidades.id','=', 'materias_unidades.unidad_id')->get();
-        //dd($materia_unidad);
-        $unidad = Unidad::all();
-
-        $uni_disponibles = array();
-        foreach ($unidad as $u) {
-            $tmp = false;
-            foreach ($materia_unidad as $mu) {   
-                if($u->nombre==$mu->nombre){
-                    $tmp = true;
-                    break;        
-                }
-            }
-            if ($tmp != true){
-                array_push($uni_disponibles, $u );    
-            }
-        }
-        return view('materia.relacion')->with('uni_disponibles',$uni_disponibles)->with('materia_unidad',$materia_unidad);
+        $unidades = DB::table('unidades')->where('materia_id',"=",$id)->get();
+        return view('materia.unidades')->with('materia',$materia)->with('unidades',$unidades);
     }
 
 }
